@@ -4,7 +4,7 @@ public class Border : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Enemy>())
+        if (collision.gameObject.TryGetComponent(out Enemy enemy))
         {
             Die(collision);
         }
